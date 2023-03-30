@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>CLBA Forum</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- social nav -->
+	<a href="https://www.facebook.com/profile.php?id=100091317372045" class="fa fa-facebook" target="_blank"></a>
+	<a href="https://twitter.com/CLBA_official" class="fa fa-twitter" target="_blank"></a>
+	<a href="https://www.instagram.com/official_clba/" class="fa fa-instagram"></a>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="attractions.html">Attractions</a></li>
+				<li><a href="deals.html">Deals</a></li>
+				<li><a href="beinspired.html">BeInspired</a></li>
+				<li class="active"><a href="#">Forum</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="forum-container">
+			<h1>CLBA Forum</h1>
+			<div class="forum-topics">
+				<h2>Latest Topics</h2>
+				<ul>
+					<li><a href="https://www.londoneye.com/" target="_blank">The London Eye Experience</a></li>
+                    <li><a href="https://www.britishmuseum.org/" target="_blank">The British Museum Experience</a></li>
+                    <li><a href="https://www.hrp.org.uk/tower-of-london/" target="_blank">The Tower Of London Experience</a></li>
+                    <li><a href="https://www.ucl.ac.uk/culture/grant-museum-zoology" target="_blank">The Grant Museum of Zoology Experience </a></li>
+                    <li><a href="https://www.nationalgallery.org.uk/" target="_blank">The National Gallery Experience</a></li>
+
+				</ul>
+			</div>
+			<div class="forum-posts">
+				<h2>Posts</h2>
+				<ul>
+					<li>
+						<h3>The Tower Of London</h3>
+						<p>Posted by <strong>Anonymous</strong> on <strong>January 1, 2023</strong></p>
+						<p>The Tower of London is a must-visit attraction for anyone interested in British history. From the Beefeaters and the Crown Jewels to the grisly tales of prisoners held within its walls, this historic site has something for everyone. The Tower is well-maintained, with knowledgeable guides and fascinating exhibits that bring the past to life. It's easy to spend several hours exploring the site, and the views of the city from the top of the White Tower are simply breathtaking. Overall, I highly recommend a visit to the Tower of London for anyone looking to experience the rich history and culture of England.</p>
+					</li>
+					<li>
+						<h3>The British Museum</h3>
+						<p>Posted by <strong>Anonymous</strong> on <strong>January 2, 2023</strong></p>
+						<p>I recently visited the British Museum and was blown away by the vast collection of artifacts from all over the world. The exhibits are well-curated and informative, providing a glimpse into the history and cultures of various civilizations. The museum is also free to enter, making it a great option for budget travelers. Highly recommend!</p>
+					</li>
+					<li>
+						<h3>The London Eye</h3>
+						<p>Posted by <strong>Anonymous</strong> on <strong>January 3, 2023</strong></p>
+						<p>The London Eye was a bit of a disappointment for me. The lines were long and the ride was overpriced for what it was. The views were nice, but not worth the wait and the price. I would recommend other ways to see the city, such as walking or taking a boat tour instead.</p>
+					</li>
+				</ul>
+			</div>
+			<div class="forum-post-form">
+    <h2>Post a new message or reply</h2>
+    <form>
+        <label for="post-message">Message:</label>
+        <textarea id="post-message" name="post-message"></textarea>
+        <label for="post-name">Name:</label>
+        <input type="text" id="post-name" name="post-name">
+        <button type="submit" id="post-submit-btn">Post</button>
+    </form>
+</div>
+
+<div class="forum-post-list">
+    <h2>Forum Discussion</h2>
+    <ul id="post-list">
+        <!-- messages will be added dynamically here -->
+    </ul>
+</div>
+
+
+<button class="scroll-to-top">Scroll to top</button>
+            
+<script>
+  // Get the button:
+  var scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
+
+  // When the user clicks on the button, scroll to the top of the document
+  scrollToTopBtn.addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
+</script>
+
+
+<script>
+    const postForm = document.querySelector('.forum-post-form form');
+    const postList = document.getElementById('post-list');
+
+    // add event listener to submit button
+    postForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // prevent the form from submitting to a server
+
+        // get values from input fields
+        const message = document.getElementById('post-message').value;
+        const name = document.getElementById('post-name').value;
+
+        // create new post element
+        const post = document.createElement('li');
+        post.innerHTML = `<span class="post-name">${name}</span>: ${message}`;
+
+        // append new post to post list
+        postList.appendChild(post);
+
+        // reset form
+        postForm.reset();
+    });
+</script>
+
+                                           
+                                           

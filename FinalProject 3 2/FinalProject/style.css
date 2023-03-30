@@ -1,0 +1,815 @@
+/* Global Styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  z-index: 100;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    z-index: 100;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+    position: absolute;
+    z-index: 100;
+    top: -10px;
+    height: 50px;
+    right: 50px;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+     position: absolute;
+    z-index: 100;
+    top: -10px;
+    height: 50px;
+    right: 100px;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+         position: absolute;
+    z-index: 100;
+    top: -10px;
+    height: 50px;
+    right: 150px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+/* Header */
+
+header {
+	background-color: #f2f2f2;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	font-weight: bold;
+}
+
+/* Main Content */
+
+.hero {
+	background-image: url("london.jpg");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+	text-align: center;
+	padding: 150px 0;
+}
+
+.hero h1 {
+	font-size: 60px;
+	margin-bottom: 20px;
+}
+
+.hero p {
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+.cta {
+	display: inline-block;
+	background-color: #ff6f00;
+	color: #fff;
+	font-weight: bold;
+	padding: 15px 30px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+	background-color: #e65100;
+}
+
+.attractions,
+.tours,
+.hotels {
+	padding: 50px 0;
+	background-color: #f2f2f2;
+}
+
+.attractions h2,
+.tours h2,
+.hotels h2 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.attraction,
+.tour,
+.hotel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.attraction img,
+.tour img,
+.hotel img {
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 20px;
+}
+
+.attraction h3,
+.tour h3,
+.hotel h3 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.attraction p,
+.tour p,
+.hotel p {
+	text-align: center;
+}
+
+
+/*code for popup*/
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box {
+    
+  width: 100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid blue;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    position: absolute;
+    
+/*    placement*/
+    position: absolute;
+    top: 100px;
+    z-index: 100;
+    
+}
+.button:hover {
+  background: blue;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+     position: absolute;
+
+    z-index: 100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+/*second code*/
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box2 {
+
+ 
+  width: 100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button2 {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid blue;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    position: absolute;
+    
+/*    placement*/
+    position: absolute;
+    top: 500px;
+    left: 1000px;
+    z-index: 100;
+    
+}
+.button2:hover {
+  background: blue;
+}
+
+.overlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+/*     position: absolute;*/
+
+    z-index: 100;
+}
+.overlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup2 {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup2 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup2 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup2 .close:hover {
+  color: #06D85F;
+}
+.popup2 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup2{
+    width: 70%;
+  }
+}
+
+/*3rd*/
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box3 {
+
+  width: 100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button3 {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid blue;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    position: absolute;
+    
+/*    placement*/
+    position: absolute;
+    top: 650px;
+    left: 200px;
+    z-index: 100;
+    
+}
+.button3:hover {
+  background: blue;
+}
+
+.overlay3 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+/*     position: absolute;*/
+
+    z-index: 100;
+}
+.overlay3:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup3 {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup3 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup3 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup3 .close:hover {
+  color: #06D85F;
+}
+.popup3 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup3{
+    width: 70%;
+  }
+}
+
+/*4th box */
+
+
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box4 {
+
+  width: 100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button4 {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid blue;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    position: absolute;
+    
+/*    placement*/
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    z-index: 100;
+    
+}
+.button4:hover {
+  background: blue;
+}
+
+.overlay4 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+/*     position: absolute;*/
+
+    z-index: 100;
+}
+.overlay4:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup4 {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup4 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup4 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup4 .close:hover {
+  color: #06D85F;
+}
+.popup4 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup4{
+    width: 70%;
+  }
+}
+
+body {
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+		}
+		.attraction {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			text-align: center;
+			display: inline-block;
+		}
+		.attraction img {
+			width: 300;
+			height: 200;
+		}
+		.attraction h2 {
+			margin-top: 10px;
+		}
+		.attraction p {
+			margin-top: 10px;
+		}
+		.attraction button {
+			margin-top: 10px;
+			background-color: #008CBA;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.attraction button:hover {
+			background-color: #006080;
+		}
+
+#payment-complete {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#payment-complete h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#payment-complete p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Forum container */
+.forum-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+  color: black;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+/* Forum topics */
+.forum-topics {
+    margin-bottom: 40px;
+}
+
+.forum-topics h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.forum-topics ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.forum-topics li {
+    margin-bottom: 10px;
+}
+
+.forum-topics a {
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.forum-topics a:hover {
+    background-color: #f9f9f9;
+}
+
+/* Forum posts */
+.forum-posts {
+    margin-bottom: 40px;
+}
+
+.forum-posts h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.forum-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.forum-posts li {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.forum-posts h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.forum-posts p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.forum-posts strong {
+    font-weight: bold;
+}
+
+/* Forum post form */
+.forum-post-form {
+    margin-bottom: 40px;
+}
+
+.forum-post-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.forum-post-form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.forum-post-form textarea,
+.forum-post-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.forum-post-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.forum-post-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Forum post list */
+.forum-post-list {
+    margin-bottom: 40px;
+}
+
+.forum-post-list h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.forum-post-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.forum-post-list li {
+    margin-bottom: 10px;
+}
+
+.forum-post-list .post-name {
+    font-weight: bold;
+}
+
+.scroll-to-top {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+display: none;
+}

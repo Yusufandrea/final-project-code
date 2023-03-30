@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Payment Page</title>
+<style>
+  /* Styles for the payment page form */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    form {
+      margin: 50px auto;
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    input:focus {
+      outline: none;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+    button {
+      background-color: #0099ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #0077cc;
+    }
+  </style>
+    
+  <!-- Include CryptoJS from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function paymentComplete() {
+  // Get the values of the credit card number, expiration date, and CVV
+  var cardNumber = document.getElementById("cardNumber").value;
+  var expiration = document.getElementById("expiration").value;
+  var cvv = document.getElementById("cvv").value;
+
+  // Validate the credit card number and CVV to allow only digits
+  if (!/^\d+$/.test(cardNumber)) {
+    alert("Please enter a valid credit card number with only digits");
+    return false;
+  }
+  if (!/^\d+$/.test(cvv)) {
+    alert("Please enter a valid CVV number with only digits");
+    return false;
+  }
+
+  // Validate the credit card number
+  if (!/^\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}$/.test(cardNumber)) {
+    alert("Please enter a valid 16-digit credit card number");
+    return false;
+  }
+
+  // Validate the expiration date
+  var today = new Date();
+  var expirationDate = new Date(expiration + '-01');
+  if (expirationDate < today) {
+    alert("Please enter a valid expiration date");
+    return false;
+  }
+
+  // Validate the CVV
+  if (!/^[0-9]{3}$/.test(cvv)) {
+    alert("Please enter a valid 3-digit CVV number");
+    return false;
+  }
+
+  // Hash the credit card number and CVV using SHA256 before submitting
+  var hashedCardNumber = CryptoJS.SHA256(cardNumber).toString();
+  var hashedCVV = CryptoJS.SHA256(cvv).toString();
+
+  // Encrypt the expiration date using AES before submitting
+  const key = 'a16byteslongkey!'; 
+  var encryptedExpiration = CryptoJS.AES.encrypt(expiration, key).toString();
+
+  
+  var data = {
+    cardNumber: hashedCardNumber,
+    expiration: encryptedExpiration,
+    cvv: hashedCVV
+  };
+  
+  // Log the data to the console for testing purposes
+  console.log(data);
+
+  // Display a message to the user that the payment is complete
+  alert("Payment Complete!");
+}
+
+  </script>
+</head>
+<body>
+  <h1>Finish Payment</h1>
+  <form onsubmit="paymentComplete()">
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" name="cardNumber" required>
+    <label for="expiration">Expiration Date:</label>
+    <input type="month" id="expiration" name="expiration" required>
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" required>
+    <button type="submit">Submit Payment</button>
+  </form> 
+</body>
+</html>
+
+
+
